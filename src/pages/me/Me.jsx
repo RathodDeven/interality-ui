@@ -60,7 +60,7 @@ const Me = () => {
     return (
         <>
             <div className="flex-container">
-                <div className="card">
+                <div className="me-card">
                     <img src="https://www.w3schools.com/howto/img_avatar.png" alt="John" className="profile_img" ></img>
                     <h1>John Doe</h1>
                     <p> johndoe@gmail.com</p>
@@ -70,12 +70,12 @@ const Me = () => {
                     <p className="title">CEO & Founder, Example</p>
                     <br />
 
-                    <a href="#"><i className="fa fa-dribbble"></i> </a>
-                    <a href="#"><i className="fa fa-twitter"></i> </a>
-                    <a href="#"><i className="fa fa-linkedin"></i> </a>
-                    <a href="#"><i className="fa fa-facebook"></i> </a>
+                    <a href="#" className="me-a"><i className="fa fa-dribbble"></i> </a>
+                    <a href="#" className="me-a"><i className="fa fa-twitter"></i> </a>
+                    <a href="#" className="me-a"><i className="fa fa-linkedin"></i> </a>
+                    <a href="#" className="me-a"><i className="fa fa-facebook"></i> </a>
                     <br />
-                    <p><button>Contact</button></p>
+                    <p><button className="me-button">Contact</button></p>
                     
                 </div>
 

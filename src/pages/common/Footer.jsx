@@ -21,7 +21,6 @@ const Footer = () => {
                                     <li><Link to="/market">Market</Link></li>
                                     <li><Link to="/about">About</Link></li>
                                     <li><Link to="/me">Me</Link></li>
-                                    
                                 </ul>
                             </div>
                             <div>
@@ -33,8 +32,6 @@ const Footer = () => {
                                 </ul>
                             </div>
                             </div>
-                            <br />
-                            <br />
                             <div className="col item social"><a href="#"><i className="fa fa-facebook"></i></a><a href="#"><i className="fa fa-twitter"></i></a><a href="#"><i className="fa fa-youtube"></i></a><a href="#"><i className="fa fa-instagram"></i></a><a href="#"><i className="fa fa-google"></i></a></div>
                         </div>
                         

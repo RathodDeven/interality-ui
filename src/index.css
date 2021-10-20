@@ -314,3 +314,7 @@ main {
     flex: 1;
   }
 }
+
+.profile_img {
+  width: 100%;
+}

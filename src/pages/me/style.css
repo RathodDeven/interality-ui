@@ -1,4 +1,4 @@
-.card {
+.me-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
@@ -25,24 +25,14 @@
   font-size: 18px;
 }
 
-
-
-
-
-
-
-a {
+.me-a {
   text-decoration: none;
   font-size: 22px;
   color: black;
 }
 
-.me-button:hover, .me-a:hover {
+.me-button:hover{
   background-color: #48d4ba;
-}
-
-.profile_img {
-  width: 100%;
 }
   .content {
     margin-top: 10px;
@@ -54,6 +44,8 @@ a {
   #avatarUrl {
     margin-top: 10px;
   }
+
+
 
   .flex-container {
     display: flex;

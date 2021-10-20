@@ -18,7 +18,7 @@
     padding: 0;
     list-style: none;
     line-height: 1.6;
-    font-size: 14px;
+    font-size: 20px;
     margin-bottom: 0
   }
   
@@ -61,7 +61,7 @@
   @media (max-width:991px) {
     .footer-dark .item.social {
         text-align: center;
-        margin-top: 20px
+        margin-top: 15px
     }
   }
   
@@ -88,7 +88,7 @@
     text-align: center;
     padding-top: 24px;
     opacity: 0.3;
-    font-size: 13px;
+    font-size: 15px;
     margin-bottom: 0
   }
   
@@ -97,6 +97,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 20px;
   }
   
   .footer-container > div {
