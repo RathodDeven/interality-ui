@@ -1,6 +1,4 @@
 import './style.css'
-import Footer from '../common/Footer';
-import CommunityBanner from '../common/CommunityBanner';
 import { useState } from 'react';
 
 const Me = () => {
@@ -10,45 +8,50 @@ const Me = () => {
 
     // Listen to messages from the iframe
     if(imgUrl === null){
-    window.addEventListener('message', receiveMessage, false)
+        window.addEventListener('message', receiveMessage, false);
     }
-
-    
-    
-
     //   Handle messages from the iframe
+
+
+    async function fetchImageFromAvatarUrl(url){
+        const params = 
+            {
+                model: url,
+                scene: "fullbody-portrait-v1",
+                armature: "ArmatureTargetMale",
+                blendShapes: {}
+            }
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json'},
+                body: JSON.stringify(params)
+            }; 
+
+            await new Promise(r => setTimeout(r, 1000));
+            fetch("https://render.readyplayer.me/render",requestOptions)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data['renders'][0]);
+                    setimgUrl(data['renders'][0]);
+                    setisloading(false);
+                })  
+                .catch(error => {
+                    console.log('error', error);
+                     setisloading(false);
+                });
+    }
     
-      function receiveMessage(event) {
-        if(imgUrl === null){
+      async function receiveMessage(event) {
         // Get URL to avatar
         const url = event.data
-        
-        console.log(`Avatar URL: ${url}`)
-        const params = 
-        {
-            model: url,
-            scene: "fullbody-portrait-v1",
-            armature: "ArmatureTargetMale",
-            blendShapes: {}
-        }
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(params)
-        }; 
-        if(typeof url !== 'object'){
+        if(typeof url !== 'object' && imgUrl == null){
             setisloading(true);
-        fetch("https://render.readyplayer.me/render",requestOptions)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data['renders'][0]);
-                setimgUrl(data['renders'][0]);
-                
-            })  
-            .catch(error => {console.log('error', error); setisloading(false)});
+            console.log(`Avatar URL: ${url}`)
+            window.removeEventListener('message', receiveMessage, false);
+            await fetchImageFromAvatarUrl(url);
+            await new Promise(r => setTimeout(r,1000));
+            setisloading(false);
         }
-        setisloading(false);
-    }
 
     }
 
@@ -77,7 +80,8 @@ const Me = () => {
                 </div>
 
                 <div className="container">
-                {!imgUrl  && <iframe id="iframe"
+                {isloading && <p>Loading your avatar ....</p>}
+                {!imgUrl && (!isloading)  && <iframe id="iframe"
                     title="Inline Frame Example"
                     width="500"
                     height="900"
@@ -86,8 +90,8 @@ const Me = () => {
                     allow="camera *; microphone *">
                 </iframe>}
 
-                {imgUrl &&<img src={imgUrl} alt="Avatar" className="profile_img" ></img>}
-                {isloading && <div>Loading...</div>}
+                {imgUrl && (!isloading) &&<img src={imgUrl} alt="Avatar" className="profile_img" />}
+                
                 </div>
             </div>
         </>

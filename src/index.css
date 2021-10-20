@@ -171,7 +171,7 @@ main {
 
 .home-page-box {
   position: absolute;
-  width: 90%;
+  width: 36%;
   max-width: 500px;
   border-radius: 16px;
   padding: 24px;
@@ -192,7 +192,7 @@ main {
   border: 2px solid #48d4ba;
   /* background-color: #48d4ba; */
   transition: all 0.2s linear;
-  margin: 60px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
   color: #48d4ba;
 }
 
