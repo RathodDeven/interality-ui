@@ -6,10 +6,6 @@ import HomeIcon from '../../asset/images/home.png'
 import MarketIcon from '../../asset/images/market.png'
 import aboutIcon from '../../asset/images/about.png'
 import MeIcon from '../../asset/images/me.png'
-import Home_hoverIcon from '../../asset/images/home_hover.png'
-import Market_hoverIcon from '../../asset/images/market_hover.png'
-import about_hoverIcon from '../../asset/images/about_hover.png'
-import Me_hoverIcon from '../../asset/images/me_hover.png'
 import CommunityBanner from './CommunityBanner';
 import Footer from './Footer';
 const NavBar = (props) => {
@@ -26,6 +22,9 @@ const NavBar = (props) => {
         window.addEventListener('resize', onResize)
         return () => { return window.removeEventListener('resize', onResize) }
     }, [])
+    useEffect(() => {
+        document.getElementById('main-container').scrollTo({top:0})
+      }, [location]);
     return (
         <>
             <div className="df row" style={{ height: "100vh" }}>
@@ -56,10 +55,7 @@ const NavBar = (props) => {
                             <Link to="/" className={location.pathname === "/" ? "center df active" : "center df"}>
                                 <div className="icon">
                                     <img src={HomeIcon} className="fit-content" alt="" />
-                                </div>
-                                <div className="icon-hover">
-                                    <img src={Home_hoverIcon} className="fit-content" alt="" />
-                                </div>
+                                </div>                                
                                 <span>Home</span>
                             </Link>
                         </li>
@@ -67,10 +63,7 @@ const NavBar = (props) => {
                             <Link to="/market" className={location.pathname === "/market" ? "center df active" : "center df"}>
                                 <div className="icon">
                                     <img src={MarketIcon} className="fit-content" alt="" />
-                                </div>
-                                <div className="icon-hover">
-                                    <img src={Market_hoverIcon} className="fit-content" alt="" />
-                                </div>
+                                </div>                                
                                 <span>NFTs</span>
                             </Link>
                         </li>
@@ -78,10 +71,7 @@ const NavBar = (props) => {
                             <Link to="/about" className={location.pathname === "/about" ? "center df active" : "center df"}>
                                 <div className="icon">
                                     <img src={aboutIcon} className="fit-content" alt="" />
-                                </div>
-                                <div className="icon-hover">
-                                    <img src={about_hoverIcon} className="fit-content" alt="" />
-                                </div>
+                                </div>                                
                                 <span>About</span>
                             </Link>
                         </li>
@@ -89,17 +79,14 @@ const NavBar = (props) => {
                             <Link to="/me" className={location.pathname === "/me" ? "center df active" : "center df"}>
                                 <div className="icon">
                                     <img src={MeIcon} className="fit-content" alt="" />
-                                </div>
-                                <div className="icon-hover">
-                                    <img src={Me_hoverIcon} className="fit-content" alt="" />
-                                </div>
+                                </div>                                
                                 <span>Me</span>
                             </Link>
                         </li>
                     </ul>
                 </div>
 
-                <main style={{ height: windowSize.height - 70 + "px", width: windowSize.width < 900 ? windowSize.width + "px" : windowSize.width - 100 + "px" }}>
+                <main id="main-container" style={{ height: windowSize.height - 70 + "px", width: windowSize.width < 900 ? windowSize.width + "px" : windowSize.width - 100 + "px" }}>
                     {props.children}
                     <CommunityBanner />
                     <Footer />
