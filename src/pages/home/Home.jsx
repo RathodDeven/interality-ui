@@ -11,7 +11,7 @@ const Home = () => {
             <div className="home-page-box">
                 <h1 className="txt-large">Welcome to PortCity</h1>
                 <h3 className="txt-medium">Join with other users in a Virtual city, Create your own virtual city.</h3>
-                <a href="https://hubs.mozilla.com/" className="btn center">
+                <a href="https://metasp.link/scenes/dan5Y5j" className="btn center">
                     Enter the PortCity
                 </a>
             </div>

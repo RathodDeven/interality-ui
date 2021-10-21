@@ -16,6 +16,7 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/market" component={Market} />
           <Route exact path="/me" component={Me} />
+          <Route exact path="/interality-ui" component={Home} />
         </Switch>
       </NavBar>
     </>
