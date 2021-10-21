@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/interality-ui/static/css/main.01949214.chunk.css",
-    "main.js": "/interality-ui/static/js/main.d777e199.chunk.js",
-    "main.js.map": "/interality-ui/static/js/main.d777e199.chunk.js.map",
+    "main.js": "/interality-ui/static/js/main.d1acf908.chunk.js",
+    "main.js.map": "/interality-ui/static/js/main.d1acf908.chunk.js.map",
     "runtime-main.js": "/interality-ui/static/js/runtime-main.d0707f1e.js",
     "runtime-main.js.map": "/interality-ui/static/js/runtime-main.d0707f1e.js.map",
     "static/js/2.4772f761.chunk.js": "/interality-ui/static/js/2.4772f761.chunk.js",
@@ -25,6 +25,6 @@
     "static/js/runtime-main.d0707f1e.js",
     "static/js/2.4772f761.chunk.js",
     "static/css/main.01949214.chunk.css",
-    "static/js/main.d777e199.chunk.js"
+    "static/js/main.d1acf908.chunk.js"
   ]
 }
